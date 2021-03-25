@@ -11,4 +11,12 @@
     <context:annotation-config/>
 	<bean id="obj5" class="kr.hs.study.beans.TestBean2" lazy-init="true"/>
 	<bean id="obj6" class="kr.hs.study.beans.TestBean2" lazy-init="true" scope="prototype" init-method="init"/>
+	
+	<bean id="obj7" class="kr.hs.study.beans.TestBean3">
+		<constructor-arg value="100" index="0"/>
+		<constructor-arg value="spring1" index="1"/>
+		<constructor-arg ref="d1" index="2"/>
+	</bean>
+	
+	<bean id="d1" class="kr.hs.study.beans.DataBean3"/>
 </beans>
