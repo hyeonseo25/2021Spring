@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       						http://www.springframework.org/schema/beans/spring-beans.xsd
+       						http://www.springframework.org/schema/context
+       						http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 나는 설정파일을 java파일로 만들었으니까 자바파일을 찾어 -->
+   <!--  자바파일에 등록되어 있는 annotation(@Bean)을 찾아서 객체를 만들어라 -->
+    <context:annotation-config/>
+	<bean id="obj5" class="kr.hs.study.beans.TestBean2" lazy-init="true"/>
+	<bean id="obj6" class="kr.hs.study.beans.TestBean2" lazy-init="true" scope="prototype" init-method="init"/>
+</beans>

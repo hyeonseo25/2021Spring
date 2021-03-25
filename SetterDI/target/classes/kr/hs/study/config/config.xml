@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       						http://www.springframework.org/schema/beans/spring-beans.xsd">
+       				
+    <bean id="obj1" class="kr.hs.study.beans.TestBean1" lazy-init="true" scope="prototype"/>
+    		
+	<bean id="obj2" class="kr.hs.study.beans.TestBean1">
+		<constructor-arg value = "10" index ="0" type ="int"></constructor-arg>
+		<constructor-arg value = "11.11" index ="1" type = "double"></constructor-arg>
+		<constructor-arg value = "NCSDB" index ="2"></constructor-arg>
+		<constructor-arg ref = "d1" index="3"></constructor-arg>
+	</bean>
+	
+	<bean id="obj3" class="kr.hs.study.beans.TestBean1">
+		<property name="a" value="20"></property>
+		<property name="b" value="22.22"></property>
+		<property name="c" value="spring2"></property>
+		<property name="d1" ref="d1"></property>
+	</bean>
+	
+	<bean id="d1" class="kr.hs.study.beans.DataBean1"/>
+	
+	<bean id="obj4" class="kr.hs.study.beans.TestBean1" autowire="byName"/>
+	<!-- private DataBean1 d1; 에서 d1과 동일한 이름의 bean 객체 할당
+	멤버변수 이름 ==== bean의 id 가 동일한 것이 자동주입 -->
+	
+	<!-- byType: 멤버변수의 타입(클래스 이름) === bean 의 타입이 동일한 것 -->
+	<bean id="obj5" class="kr.hs.study.beans.TestBean1" autowire="byType"/>
+	
+	<bean id="obj6" class="kr.hs.study.beans.TestBean1" autowire="constructor"/>
+	
+	<!-- 동일한 이름의 bean이 2개 이상 존재할 때는 에러 발생
+	id를 사용하지 않는 개발자들 떄문에 byType사용 -->
+	<bean id="obj7" class="kr.hs.study.beans.TestBean1" autowire="byType">
+		<constructor-arg value="10"></constructor-arg>
+		<constructor-arg value="22.22"></constructor-arg>
+		<constructor-arg value="spring3"></constructor-arg>
+	</bean>
+</beans>
