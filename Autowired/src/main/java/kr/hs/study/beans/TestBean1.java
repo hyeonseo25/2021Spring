@@ -25,21 +25,27 @@ public class TestBean1 {
 	public int getData1() {
 		return data1;
 	}
+	
 	public void setData1(int data1) {
 		this.data1 = data1;
 	}
+	
 	public double getData2() {
 		return data2;
 	}
+	
 	public void setData2(double data2) {
 		this.data2 = data2;
 	}
+	
 	public DataBean1 getData3() {
 		return data3;
 	}
+	
 	public DataBean1 getData4() {
 		return data4;
 	}
+	
 	public void setData4(DataBean1 data4) {
 		this.data4 = data4;
 	}
