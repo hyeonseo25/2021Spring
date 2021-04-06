@@ -9,7 +9,7 @@ public class CarUser {
 	}
 	
 	public CarUser(Car car_type) {
-		super();testBean5
+		super();
 		this.car_type = car_type;
 	}
 
