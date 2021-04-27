@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class LoginDTO {
 	private String userID;
-	private String userPass;
+	private int userPass;
 	
 	
 	public LoginDTO() {
 		super();
 	}
-	public LoginDTO(String userID, String userPass) {
+	public LoginDTO(String userID, int userPass) {
 		super();
 		this.userID = userID;
 		this.userPass = userPass;
@@ -25,10 +25,10 @@ public class LoginDTO {
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
-	public String getUserPass() {
+	public int getUserPass() {
 		return userPass;
 	}
-	public void setUserPass(String userPass) {
+	public void setUserPass(int userPass) {
 		this.userPass = userPass;
 	}
 	
