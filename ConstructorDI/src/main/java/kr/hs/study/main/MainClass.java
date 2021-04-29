@@ -11,6 +11,7 @@ public class MainClass {
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("kr/hs/study/config/config.xml");
 		
 		TestBean1 obj = ctx.getBean("t1",TestBean1.class);
+		System.out.println("hello"+obj);
 		obj.prData();
 		System.out.println("=============================================");
 		//자바코드로 TestBean1(int data1) 호출해서 출력시켜봐 10
