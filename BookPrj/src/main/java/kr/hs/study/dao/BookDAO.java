@@ -15,6 +15,7 @@ public class BookDAO {
 	private JdbcTemplate jdbcTemplate;
 	@Autowired
 	private MapperClass mapper;
+	
 	// 추가
 	public void insert_data(BookDTO dto) {
 		String sql = "insert into book values(?,?,?,?)";
